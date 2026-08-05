@@ -1,0 +1,500 @@
+.rooms-section{
+
+background: #faf6ef;
+
+padding:0px 60px 110px;
+
+}
+
+
+.rooms-heading{
+
+text-align:center;
+font-size:60px;
+margin-bottom:55px;
+
+}
+
+.rooms-heading h2{
+
+font-size:56px;
+
+font-weight:800;
+
+line-height:1.15;
+
+color:#1d1d1d;
+
+margin-bottom:18px;
+
+letter-spacing:-1px;
+
+}
+
+.rooms-heading h2 span{
+
+color: #D4AF37;
+
+}
+
+.rooms-heading p{
+
+font-size:17px;
+
+color:#777;
+
+max-width:620px;
+
+margin:auto;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+.rooms-container{
+
+max-width:1300px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+align-items:stretch;
+
+}
+
+
+
+
+
+.room-card{
+
+background:#ffffff;
+
+border-radius:26px;
+
+overflow:hidden;
+
+box-shadow:
+0 18px 45px rgba(0,0,0,0.08);
+
+transition:.35s ease;
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+
+
+.room-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+.room-image{
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
+.room-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+
+
+
+.rating{
+
+position:absolute;
+
+top:15px;
+
+left:15px;
+
+z-index:10;
+
+display:flex;
+
+align-items:center;
+
+gap:5px;
+
+background:white;
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#8c6b32;
+
+}
+
+
+
+
+
+
+.room-content{
+
+padding:22px;
+
+display:flex;
+
+flex-direction:column;
+
+flex:1;
+
+}
+
+
+
+
+
+.room-content h3{
+
+font-size:21px;
+
+color:#222;
+
+margin-bottom:10px;
+
+min-height:50px;
+
+}
+
+
+
+
+
+.room-description{
+
+font-size:14px;
+
+color:#777;
+
+line-height:1.5;
+
+margin-bottom:20px;
+
+min-height:45px;
+
+}
+
+
+
+
+
+
+
+.amenities{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:25px;
+
+min-height:55px;
+
+}
+
+
+
+
+
+
+.amenity{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+font-size:13px;
+
+color:#665f54;
+
+}
+
+
+
+
+
+.amenity svg{
+
+width:18px;
+
+height:18px;
+
+stroke-width:2;
+
+color:#B08A45;
+
+flex-shrink:0;
+
+}
+
+
+
+
+
+
+
+.room-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:auto;
+
+}
+
+
+
+
+
+
+.price{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+
+
+.price span{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#B08A45;
+
+}
+
+
+
+.price small{
+
+font-size:13px;
+
+color:#777;
+
+}
+
+.room-bottom button{
+
+border:none;
+
+background:#1c1c1c;
+
+color:white;
+
+width:115px;
+
+height:62px;
+
+border-radius:22px;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-size:15px;
+
+font-weight:500;
+
+line-height:1.2;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+
+.room-bottom button:hover{
+
+background:#B08A45;
+
+}
+
+
+
+
+
+
+
+@media(max-width:1200px){
+
+.rooms-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+.rooms-section{
+
+padding:60px 20px;
+
+}
+
+
+
+.rooms-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.rooms-heading h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ==============================
+   AI RECOMMENDATION
+============================== */
+
+
+.ai-recommendation-card{
+    width: 100%;
+    max-width: 700px;      /* instead of 1200px */
+    margin: 0 auto 50px;
+    background: #fff;
+    border: 2px solid #D4AF37;
+    border-radius: 20px;
+    padding: 30px 35px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.ai-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+.ai-header h3{
+
+    font-size:24px;
+
+    color:#222;
+
+}
+
+.ai-recommendation-card h2{
+
+    font-size:34px;
+
+    color:#D4AF37;
+
+    margin:10px 0;
+
+}
+
+.ai-match{
+
+    display:inline-block;
+
+    background:#FFF8E6;
+
+    color:#C99700;
+
+    padding:10px 22px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.ai-recommendation-card h4{
+
+    margin:20px 0 12px;
+
+    color:#222;
+
+}
+
+.ai-recommendation-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.ai-recommendation-card li{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+    color:#555;
+
+}

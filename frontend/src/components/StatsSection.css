@@ -1,0 +1,293 @@
+.stats-section {
+  position: relative;
+  background: #FC9F4F;
+  background: #FCF9F4;
+  padding: 20px 20px 100px;
+  overflow: hidden;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.stats-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* ================= HEADING ================= */
+
+.stats-heading {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 55px;
+}
+
+
+.section-tag {
+
+  display:inline-block;
+
+  padding:8px 18px;
+
+  border-radius:999px;
+
+  background:#FFF3D6;
+
+  color:#C99718;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  margin-bottom:18px;
+
+}
+
+
+.stats-heading h2 {
+
+  font-size:56px;
+
+  font-weight:800;
+
+  color:#16203A;
+
+  margin-bottom:14px;
+
+  white-space:nowrap;
+
+}
+
+
+.stats-heading h2 span {
+
+  color:#D4AF37;
+
+}
+
+
+.stats-heading p {
+
+  max-width:650px;
+
+  margin:auto;
+
+  font-size:18px;
+
+  color:#6B7280;
+
+  line-height:1.7;
+
+}
+
+
+
+/* ================= GRID ================= */
+
+.stats-grid {
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:28px;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+
+.stat-card {
+
+  position:relative;
+
+  background:#ffffff;
+
+  border-radius:30px;
+
+  padding:34px 25px;
+
+  min-height:220px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  border:1px solid rgba(212,175,55,.18);
+
+  box-shadow:
+
+  0 12px 35px rgba(0,0,0,.06);
+
+  overflow:hidden;
+
+  transition:.35s ease;
+
+}
+
+
+
+.stat-card:hover {
+
+  transform:translateY(-10px);
+
+  border-color:#D4AF37;
+
+  box-shadow:
+
+  0 25px 55px rgba(0,0,0,.12);
+
+}
+
+
+
+/* ================= AI BADGE ================= */
+
+
+.ai-status {
+
+  position:absolute;
+
+  top:18px;
+
+  right:18px;
+
+  background:#FFF3D6;
+
+  color:#C99718;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  padding:5px 12px;
+
+  border-radius:30px;
+
+  letter-spacing:1px;
+
+}
+
+
+
+/* ================= ICON ================= */
+
+
+.stat-icon {
+
+  width:76px;
+
+  height:76px;
+
+  border-radius:22px;
+
+  background:linear-gradient(
+    135deg,
+    #F6D36F,
+    #D4AF37
+  );
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:white;
+
+  margin-bottom:22px;
+
+  box-shadow:
+
+  0 15px 30px rgba(212,175,55,.30);
+
+}
+
+
+
+/* ================= CONTENT ================= */
+
+
+.stat-content h3 {
+
+  font-size:38px;
+
+  font-weight:800;
+
+  color:#16203A;
+
+  margin:0 0 8px;
+
+}
+
+
+
+.stat-content span {
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:#1F2937;
+
+}
+
+
+
+.stat-content small {
+
+  display:block;
+
+  margin-top:8px;
+
+  font-size:14px;
+
+  color:#6B7280;
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:1000px){
+
+  .stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .stats-heading h2{
+
+    font-size:38px;
+
+    white-space:normal;
+
+  }
+
+
+  .stats-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+}

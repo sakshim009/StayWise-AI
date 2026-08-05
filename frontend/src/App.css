@@ -1,0 +1,47 @@
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  height:100%;
+  background: rgba(0,0,0,0.35);
+  color:white;
+}
+
+nav {
+  padding:30px 60px;
+}
+
+.content {
+  height:80%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.content h1 {
+  font-size:55px;
+}
+
+.content p {
+  font-size:20px;
+}
+
+button {
+  margin:15px;
+  padding:14px 35px;
+  border-radius:30px;
+  border:none;
+  background:#d4af37;
+  color:white;
+  font-size:16px;
+}
+
+.outline {
+  background:transparent;
+  border:1px solid white;
+}

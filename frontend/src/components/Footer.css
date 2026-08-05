@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+    width:100%;
+    background:#FCF9F4;
+    padding:70px 80px 35px;
+    border-top:1px solid #EFE3C8;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.footer-container{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr repeat(4,1fr);
+    gap:40px;
+}
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-icon{
+    display:flex;
+    align-items:flex-end;
+    gap:4px;
+}
+
+.logo-icon span{
+    width:7px;
+    background:linear-gradient(
+        to top,
+        #C58B00,
+        #F4D77B
+    );
+    border-radius:5px;
+}
+
+.logo-icon span:nth-child(1){
+    height:18px;
+}
+
+.logo-icon span:nth-child(2){
+    height:28px;
+}
+
+.logo-icon span:nth-child(3){
+    height:40px;
+}
+
+.logo-icon span:nth-child(4){
+    height:25px;
+}
+
+.footer-logo h2{
+    margin:0;
+    font-size:34px;
+    font-family:"Playfair Display",serif;
+    color:#111827;
+}
+
+.footer-brand p{
+    margin-top:18px;
+    max-width:290px;
+    color:#667085;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* ==========================================
+   COLUMNS
+========================================== */
+
+.footer-column h3{
+    font-size:22px;
+    color:#111827;
+    margin-bottom:22px;
+    font-family:"Playfair Display",serif;
+}
+
+.footer-column h3::after{
+    content:"";
+    display:block;
+    width:36px;
+    height:2px;
+    margin-top:10px;
+    background:#D4AF37;
+}
+
+.footer-column ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-column li{
+    margin-bottom:15px;
+}
+
+.footer-column a{
+    color:#555;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:#D4AF37;
+    padding-left:5px;
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#555;
+    font-size:15px;
+    line-height:1.6;
+}
+
+.contact-list svg{
+    color:#D4AF37;
+    flex-shrink:0;
+}
+
+/* ==========================================
+   FOOTER BOTTOM
+========================================== */
+
+.footer-bottom{
+    max-width:1300px;
+    margin:55px auto 0;
+}
+
+.footer-line{
+    width:100%;
+    height:1px;
+    background:#E6D3A4;
+    margin-bottom:24px;
+}
+
+.footer-bottom-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-bottom-content p{
+    margin:0;
+    color:#667085;
+    font-size:15px;
+}
+
+.footer-bottom-content strong{
+    color:#D4AF37;
+    font-weight:700;
+}
+
+.developer-credit{
+    font-weight:500;
+}
+
+.developer-credit span{
+    color:#D4AF37;
+    font-weight:700;
+    transition:.3s;
+    cursor:default;
+}
+
+.developer-credit span:hover{
+    color:#C78700;
+}
+
+/* ==========================================
+   OPTIONAL SOCIAL ICONS
+========================================== */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:22px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid #D4AF37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#222;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#D4AF37;
+    color:#fff;
+    transform:translateY(-4px);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+.footer{
+    padding:60px 35px;
+}
+
+.footer-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.footer{
+    padding:50px 24px;
+}
+
+.footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.footer-logo{
+    justify-content:center;
+}
+
+.footer-brand p{
+    margin:18px auto 0;
+}
+
+.contact-list li{
+    justify-content:center;
+}
+
+.footer-bottom-content{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+}
+
+}
+
+@media(max-width:480px){
+
+.footer-logo h2{
+    font-size:28px;
+}
+
+.footer-column h3{
+    font-size:20px;
+}
+
+.footer-bottom-content p{
+    font-size:14px;
+}
+
+}

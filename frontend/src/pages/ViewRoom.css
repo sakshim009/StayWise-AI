@@ -1,0 +1,177 @@
+.view-room{
+    min-height:100vh;
+    background:#fcf9f4;
+    padding:30px 50px 80px;
+}
+
+.view-container{
+    max-width:1400px;
+    margin:auto;
+}
+
+/* HOTEL */
+
+.hotel-info{
+    background:#fff;
+    border-radius:30px;
+    padding:30px;
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.hotel-banner{
+    width:430px;
+    height:270px;
+    object-fit:cover;
+    border-radius:25px;
+    flex-shrink:0;
+}
+
+.hotel-details{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.hotel-details h1{
+    font-size:44px;
+    color:#222;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.hotel-location{
+    font-size:20px;
+    margin-bottom:12px;
+    color:#444;
+}
+
+.hotel-rating{
+    font-size:22px;
+    color:#d4af37;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.about-section h3{
+    font-size:28px;
+    color:#222;
+    margin-bottom:15px;
+}
+
+.hotel-description{
+    font-size:18px;
+    color:#666;
+    line-height:1.8;
+}
+
+/* ROOMS */
+
+.rooms-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.room-card{
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.room-card:hover{
+    transform:translateY(-8px);
+}
+
+.room-image{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.room-content{
+    padding:25px;
+}
+
+.room-content h2{
+    color:#222;
+    margin-bottom:10px;
+}
+
+.room-content h3{
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.room-content p{
+    margin-bottom:18px;
+}
+
+.room-content ul{
+    padding-left:20px;
+    line-height:1.8;
+    color:#555;
+}
+
+.book-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#d4af37;
+    color:#111;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.book-btn:hover{
+    background:#111;
+    color:#fff;
+}
+
+.back-btn{
+    margin-bottom:20px;
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#d4af37;
+    color:#111;
+}
+
+@media(max-width:900px){
+
+.hotel-info{
+    flex-direction:column;
+}
+
+.hotel-banner{
+    width:100%;
+    height:260px;
+}
+
+.hotel-details h1{
+    font-size:34px;
+}
+
+.rooms-grid{
+    grid-template-columns:1fr;
+}
+
+}

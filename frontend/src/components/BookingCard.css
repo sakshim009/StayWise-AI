@@ -1,0 +1,540 @@
+/* ==========================================================
+   BOOKING WRAPPER
+========================================================== */
+
+.booking-wrapper{
+    width:100%;
+    max-width:1500px;
+    margin:0px auto 40px;   /* slightly lower */
+    padding:0 40px;
+    position:relative;
+    z-index:100;
+}
+/* ==========================================================
+   BOOKING BAR
+========================================================== */
+
+.booking-bar{
+
+    background:#fff;
+
+    border-radius:28px 28px 0 0;
+
+    padding:22px;
+
+    display:grid;
+
+    grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    .8fr
+    220px;
+
+    gap:18px;
+
+    border:1px solid rgba(212,175,55,.18);
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   INPUT FIELD
+========================================================== */
+
+.booking-field{
+
+    background:#FCF9F4;
+
+    border:1px solid rgba(0,0,0,.07);
+
+    border-radius:18px;
+
+    min-height:88px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    transition:.35s;
+
+}
+
+
+.booking-field:hover{
+
+    transform:translateY(-2px);
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 12px 28px rgba(212,175,55,.18);
+
+}
+
+
+.booking-field svg{
+
+    color:#D4AF37;
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================================
+   FIELD CONTENT
+========================================================== */
+
+.booking-field div{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+
+.booking-field label{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#8B8B8B;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.booking-field input,
+.booking-field select{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+
+.booking-field input::placeholder{
+
+    color:#9B9B9B;
+
+}
+
+
+/* ==========================================================
+   LOCATION FIELD
+========================================================== */
+
+.location-field{
+
+    background:#FFFDF9;
+
+}
+/* ==========================================================
+   SEARCH BUTTON
+========================================================== */
+
+.search-btn{
+
+    width:220px;
+
+    min-height:88px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #E3BE53,
+        #D4AF37
+    );
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 18px 35px rgba(212,175,55,.35);
+
+}
+
+
+.search-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 24px 45px rgba(212,175,55,.45);
+
+}
+
+
+.search-btn svg{
+
+    transition:.35s;
+
+}
+
+
+.search-btn:hover svg{
+
+    transform:translateX(4px);
+
+}
+
+
+/* ==========================================================
+   BENEFITS CONTAINER
+========================================================== */
+
+.booking-benefits{
+
+    background:#fff;
+
+    padding:24px;
+
+    border-radius:0 0 28px 28px;
+
+    border:1px solid rgba(212,175,55,.18);
+
+    border-top:none;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+
+/* ==========================================================
+   BENEFIT CARD
+========================================================== */
+
+.benefit-item{
+
+    background:#FCF9F4;
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    transition:.35s;
+
+}
+
+
+.benefit-item:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 15px 30px rgba(212,175,55,.18);
+
+}
+
+
+.benefit-item svg{
+
+    color:#D4AF37;
+
+    flex-shrink:0;
+
+    margin-top:2px;
+
+}
+
+
+/* ==========================================================
+   BENEFIT CONTENT
+========================================================== */
+
+.benefit-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.benefit-content h4{
+
+    margin:0;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+
+.benefit-content p{
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    color:#777;
+
+    line-height:1.5;
+
+}
+/* ==========================================================
+   INPUT FOCUS EFFECT
+========================================================== */
+
+.booking-field:focus-within{
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 0 0 4px rgba(212,175,55,.12),
+    0 15px 35px rgba(212,175,55,.18);
+
+}
+
+
+.booking-field input,
+.booking-field select{
+
+    font-family:inherit;
+
+}
+
+
+.booking-field select{
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+.booking-wrapper *,
+.booking-wrapper *::before,
+.booking-wrapper *::after{
+
+    transition:
+    background .3s,
+    color .3s,
+    border-color .3s,
+    box-shadow .3s,
+    transform .3s;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:1200px){
+
+.booking-wrapper{
+
+    padding:0 24px;
+
+}
+
+.booking-bar{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+.search-btn{
+
+    width:100%;
+
+    min-height:70px;
+
+}
+
+.booking-benefits{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+.booking-wrapper{
+
+    margin:-70px auto 30px;
+
+    padding:0 16px;
+
+}
+
+.booking-bar{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+
+    padding:18px;
+
+}
+
+.booking-field{
+
+    min-height:72px;
+
+    padding:15px;
+
+}
+
+.search-btn{
+
+    width:100%;
+
+    min-height:60px;
+
+    font-size:16px;
+
+}
+
+.booking-benefits{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+
+    padding:18px;
+
+}
+
+.benefit-item{
+
+    padding:16px;
+
+}
+
+.benefit-content h4{
+
+    font-size:15px;
+
+}
+
+.benefit-content p{
+
+    font-size:12px;
+
+}
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+.booking-wrapper{
+
+    margin:-50px auto 25px;
+
+}
+
+.booking-bar{
+
+    border-radius:22px 22px 0 0;
+
+}
+
+.booking-benefits{
+
+    border-radius:0 0 22px 22px;
+
+}
+
+.booking-field{
+
+    gap:12px;
+
+}
+
+.booking-field svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.search-btn{
+
+    border-radius:16px;
+
+}
+
+}

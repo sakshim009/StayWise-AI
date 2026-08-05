@@ -1,0 +1,564 @@
+/* ==========================================================
+   CHOOSE YOUR JOURNEY
+========================================================== */
+
+.journey-section{
+    padding:100px 70px;
+    background:
+        radial-gradient(circle at top left,#FFF7E8 0%,#FCF9F4 45%),
+        radial-gradient(circle at bottom right,#FFF4DD 0%,transparent 35%),
+        #FCF9F4;
+}
+
+.journey-container{
+    max-width:1280px;
+    margin:auto;
+}
+
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.journey-heading{
+    max-width:720px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.journey-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    color:#C7A12C;
+
+    font-size:14px;
+    font-weight:600;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 10px 25px rgba(212,175,55,.08);
+
+}
+
+.journey-heading h2{
+
+    font-size:54px;
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+}
+
+.journey-heading h2 span{
+
+    color:#D4AF37;
+
+}
+
+.journey-heading p{
+
+    font-size:18px;
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   MAIN CARD
+========================================================== */
+
+.journey-card{
+
+    background:#fff;
+
+    border-radius:34px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1px 1fr;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:1px solid rgba(212,175,55,.18);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+/* Premium Gold Top Line */
+
+.journey-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #EFD67A,
+        #D4AF37,
+        #EFD67A
+    );
+
+}
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.journey-divider{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(212,175,55,.25),
+            transparent
+        );
+
+}
+
+.journey-divider span{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:#D4AF37;
+
+    box-shadow:
+        0 0 18px rgba(212,175,55,.4);
+
+}
+
+/* ==========================================================
+   SIDE
+========================================================== */
+
+.journey-side{
+
+    padding:55px 45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.journey-side:hover{
+
+    background:#FFFDF8;
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.side-icon{
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:28px;
+
+    transition:.35s;
+
+}
+
+.guest-icon{
+
+    background:
+    linear-gradient(
+        135deg,
+        #F6DD86,
+        #D4AF37
+    );
+
+    color:#111827;
+
+    box-shadow:
+    0 18px 40px rgba(212,175,55,.30);
+
+}
+
+.owner-icon{
+
+    background:#111827;
+
+    color:#D4AF37;
+
+    box-shadow:
+    0 18px 40px rgba(17,24,39,.18);
+
+}
+
+.journey-side:hover .side-icon{
+
+    transform:
+    translateY(-8px)
+    scale(1.05);
+
+}
+
+/* ==========================================================
+   TAG
+========================================================== */
+
+.side-tag{
+
+    background:#FFF7E5;
+
+    color:#B98909;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.journey-side h3{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+.journey-side p{
+
+    max-width:320px;
+
+    font-size:16px;
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+/* ==========================================================
+   FEATURE CHIPS
+========================================================== */
+
+.feature-chips{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:40px;
+}
+
+.chip{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 18px;
+
+    background:#FCF9F4;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    border-radius:50px;
+
+    font-size:15px;
+    font-weight:600;
+    color:#374151;
+
+    transition:.3s ease;
+}
+
+.chip svg{
+    color:#D4AF37;
+}
+
+.chip:hover{
+    background:#FFF4D8;
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(212,175,55,.18);
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.journey-btn{
+
+    width:220px;
+    height:58px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #E8C65C,
+        #D4AF37
+    );
+
+    color:#111827;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 15px 35px rgba(212,175,55,.28);
+
+}
+
+.journey-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 24px 45px rgba(212,175,55,.38);
+
+}
+
+.journey-btn.dark{
+
+    background:#111827;
+
+    color:#fff;
+
+    box-shadow:
+        0 15px 35px rgba(17,24,39,.18);
+
+}
+
+.journey-btn.dark:hover{
+
+    background:#1F2937;
+
+}
+
+/* ==========================================================
+   PANEL HOVER
+========================================================== */
+
+.journey-side::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:0;
+    height:4px;
+
+    border-radius:20px;
+
+    background:#D4AF37;
+
+    transition:.35s;
+
+}
+
+.journey-side:hover::after{
+
+    width:120px;
+
+}
+
+.journey-side:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1024px){
+
+    .journey-section{
+        padding:80px 35px;
+    }
+
+    .journey-heading h2{
+        font-size:44px;
+    }
+
+    .journey-card{
+        grid-template-columns:1fr;
+    }
+
+    .journey-divider{
+        width:100%;
+        height:1px;
+        background:
+            linear-gradient(
+                to right,
+                transparent,
+                rgba(212,175,55,.25),
+                transparent
+            );
+    }
+
+    .journey-divider span{
+        top:50%;
+        left:50%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .journey-section{
+        padding:70px 20px;
+    }
+
+    .journey-heading{
+        margin-bottom:50px;
+    }
+
+    .journey-heading h2{
+        font-size:36px;
+    }
+
+    .journey-heading p{
+        font-size:16px;
+    }
+
+    .journey-side{
+        padding:40px 24px;
+    }
+
+    .side-icon{
+        width:80px;
+        height:80px;
+    }
+
+    .journey-side h3{
+        font-size:28px;
+    }
+
+    .feature-chips{
+        gap:10px;
+    }
+
+    .chip{
+        width:100%;
+        justify-content:center;
+    }
+
+    .journey-btn{
+        width:100%;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .journey-heading h2{
+        font-size:30px;
+    }
+
+    .journey-badge{
+        font-size:13px;
+        padding:8px 16px;
+    }
+
+    .journey-side{
+        padding:35px 20px;
+    }
+
+    .side-icon{
+        width:72px;
+        height:72px;
+    }
+
+    .journey-side h3{
+        font-size:24px;
+    }
+
+    .journey-side p{
+        font-size:15px;
+    }
+
+    .chip{
+        font-size:14px;
+        padding:11px 16px;
+    }
+
+}

@@ -1,0 +1,367 @@
+/* ================= PAGE ================= */
+
+.confirmation-page{
+    min-height:100vh;
+    background:#fcf9f4;
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= CARD ================= */
+
+.confirmation-card{
+    width:100%;
+    max-width:760px;
+    background:#fff;
+    border-radius:24px;
+    padding:40px;
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+/* ================= SUCCESS ================= */
+
+.success-icon{
+    font-size:80px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.confirmation-card h1{
+    text-align:center;
+    color:#222;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.thank-you{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+/* ================= STATUS ================= */
+
+.status-badge{
+    width:fit-content;
+    margin:0 auto 25px;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:700;
+}
+
+.confirmed{
+    background:#e7f8ec;
+    color:#198754;
+}
+
+.cancelled{
+    background:#fde8e8;
+    color:#dc3545;
+}
+
+/* ================= BOOKING ID ================= */
+
+.booking-id{
+    background:#faf7ef;
+    border:2px dashed #d4af37;
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.booking-id h2{
+    color:#d4af37;
+    margin-top:8px;
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+/* ================= DETAILS ================= */
+
+.confirmation-details,
+.price-summary{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:25px;
+}
+
+.price-summary h2{
+    margin-bottom:20px;
+    color:#222;
+    font-size:26px;
+}
+
+/* ================= ROW ================= */
+
+.detail-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #f2f2f2;
+}
+
+.detail-row:last-child{
+    border-bottom:none;
+}
+
+.detail-row span{
+    color:#666;
+    font-size:16px;
+}
+
+.detail-row strong{
+    color:#222;
+    font-size:16px;
+}
+
+.total{
+    margin-top:10px;
+    font-size:20px;
+    font-weight:700;
+}
+
+.total strong{
+    color:#d4af37;
+    font-size:22px;
+}
+
+/* ================= BUTTONS ================= */
+
+.confirmation-buttons{
+    display:flex;
+    gap:18px;
+    margin-top:30px;
+}
+
+.receipt-btn,
+.cancel-btn,
+.cancelled-btn,
+.home-btn{
+    flex:1;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* Download Receipt */
+
+.receipt-btn{
+    background:#111;
+    color:#fff;
+}
+
+.receipt-btn:hover{
+    background:#333;
+}
+
+.receipt-btn:disabled{
+    background:#bdbdbd;
+    color:#fff;
+    cursor:not-allowed;
+}
+
+/* Cancel Booking */
+
+.cancel-btn{
+    background:#dc3545;
+    color:#fff;
+}
+
+.cancel-btn:hover{
+    background:#bb2d3b;
+}
+
+/* Cancelled */
+
+.cancelled-btn{
+    background:#9e9e9e;
+    color:#fff;
+    cursor:not-allowed;
+}
+
+/* Home */
+
+.home-btn{
+    background:#d4af37;
+    color:#111;
+}
+
+.home-btn:hover{
+    background:#bf9721;
+}
+
+/* ================= QR CODE ================= */
+
+.qr-card{
+    margin:30px 0;
+    padding:25px;
+    text-align:center;
+    background:#faf7ef;
+    border:1px solid #e6d8a8;
+    border-radius:18px;
+}
+
+.qr-card h3{
+    color:#222;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.qr-card svg{
+    padding:15px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.qr-card p{
+    margin-top:18px;
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+}
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.confirmation-page{
+    padding:25px 15px;
+}
+
+.confirmation-card{
+    padding:25px;
+}
+
+.confirmation-card h1{
+    font-size:30px;
+}
+
+.booking-id h2{
+    font-size:24px;
+}
+
+.confirmation-buttons{
+    flex-direction:column;
+}
+
+.detail-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+}
+
+.status-badge{
+    font-size:14px;
+}
+
+}
+
+/* ================= CANCEL MODAL ================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    animation:fadeIn .3s ease;
+}
+
+.cancel-modal{
+    width:90%;
+    max-width:450px;
+    background:#fff;
+    border-radius:20px;
+    padding:35px 30px;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+    animation:popup .3s ease;
+}
+
+.cancel-modal h2{
+    color:#222;
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+.cancel-modal p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:30px;
+    font-size:17px;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.keep-btn,
+.confirm-cancel-btn{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.keep-btn{
+    background:#ececec;
+    color:#222;
+}
+
+.keep-btn:hover{
+    background:#d9d9d9;
+}
+
+.confirm-cancel-btn{
+    background:#dc3545;
+    color:#fff;
+}
+
+.confirm-cancel-btn:hover{
+    background:#bb2d3b;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}

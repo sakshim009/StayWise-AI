@@ -1,0 +1,163 @@
+/* =====================================
+   MESSAGE ROW
+===================================== */
+
+.message-row{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    align-items:flex-end;
+
+}
+
+
+.message-row.user{
+
+    flex-direction:row-reverse;
+
+}
+
+
+
+/* =====================================
+   AVATAR
+===================================== */
+
+
+.avatar{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#FFF9F1;
+
+    border:1px solid #E5E7EB;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+
+
+/* AI Avatar */
+
+.ai .avatar{
+
+    background:#D4AF37;
+
+    color:white;
+
+}
+
+
+
+/* =====================================
+   MESSAGE CONTENT
+===================================== */
+
+
+.message-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    max-width:75%;
+
+}
+
+
+.user .message-content{
+
+    align-items:flex-end;
+
+}
+
+
+
+/* =====================================
+   MESSAGE BUBBLE
+===================================== */
+
+
+.message-bubble{
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    background:white;
+
+    border:1px solid #E8E0D0;
+
+    color:#333;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+
+
+/* AI Bubble */
+
+
+.ai .message-bubble{
+
+    border-bottom-left-radius:5px;
+
+}
+
+
+
+/* User Bubble */
+
+
+.user .message-bubble{
+
+    background:#D4AF37;
+
+    color:white;
+
+    border:none;
+
+    border-bottom-right-radius:5px;
+
+}
+
+
+
+/* =====================================
+   TIME
+===================================== */
+
+
+.message-time{
+
+    font-size:11px;
+
+    color:#999;
+
+    margin-top:5px;
+
+    padding:0 5px;
+
+}

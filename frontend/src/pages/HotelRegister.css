@@ -1,0 +1,483 @@
+/* =================================
+   HOTEL REGISTER PAGE
+================================= */
+
+
+.hotel-register-page{
+
+    min-height:100vh;
+
+    background:#FFF9F1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:80px 30px;
+
+    font-family:"Inter",sans-serif;
+
+}
+
+
+
+
+
+.register-container{
+
+
+    max-width:1100px;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr 420px;
+
+    gap:50px;
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+/* ===============================
+   FORM CARD
+================================ */
+
+
+.register-card{
+
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+.register-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.register-header svg{
+
+    color:#D4AF37;
+
+}
+
+
+
+.register-header h1{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:32px;
+
+    margin:12px 0;
+
+    color:#111;
+
+
+}
+
+
+
+
+.register-header p{
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ===============================
+   FORM
+================================ */
+
+
+.register-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+
+
+.input-group{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:14px;
+
+    padding:0 15px;
+
+    height:50px;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.input-group svg{
+
+    color:#C98D00;
+
+}
+
+
+
+.input-group input{
+
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.input-group:focus-within{
+
+
+    border-color:#D4AF37;
+
+    box-shadow:
+
+    0 0 0 4px rgba(212,175,55,.12);
+
+
+}
+
+
+
+
+
+.input-row{
+
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.hotel-type{
+
+
+    height:50px;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    padding:0 15px;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+
+
+
+.hotel-type:focus{
+
+
+    border-color:#D4AF37;
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+.register-btn{
+
+
+    height:52px;
+
+    border:none;
+
+    border-radius:16px;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #D4AF37,
+
+    #C78700
+
+    );
+
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+
+.register-btn:hover{
+
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 25px rgba(212,175,55,.35);
+
+
+}
+
+
+
+
+
+/* ===============================
+   BENEFITS CARD
+================================ */
+
+
+.register-benefits{
+
+
+    background:
+
+    linear-gradient(
+
+    145deg,
+
+    #fff,
+
+    #fff8e8
+
+    );
+
+
+    padding:45px;
+
+    border-radius:30px;
+
+
+    border:1px solid rgba(212,175,55,.2);
+
+
+}
+
+
+
+
+.benefit-icon{
+
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    background:#fff4d6;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#D4AF37;
+
+
+}
+
+
+
+
+.register-benefits h2{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    margin:25px 0 10px;
+
+
+}
+
+
+
+
+.register-benefits p{
+
+
+    color:#666;
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+.benefit-list{
+
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    font-size:15px;
+
+    color:#444;
+
+
+}
+
+
+
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+
+@media(max-width:900px){
+
+
+.register-container{
+
+
+    grid-template-columns:1fr;
+
+}
+
+
+.register-benefits{
+
+
+    display:none;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.register-card{
+
+
+    padding:25px;
+
+}
+
+
+
+.input-row{
+
+
+    grid-template-columns:1fr;
+
+}
+
+
+}

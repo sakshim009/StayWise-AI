@@ -1,0 +1,707 @@
+/* =====================================================
+   HOTEL SOLUTIONS SECTION
+===================================================== */
+
+
+.hotel-solutions{
+
+    padding:110px 7%;
+
+    background:#FFF9F1;
+
+}
+
+
+.hotel-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+
+.hotel-content{
+
+    animation:slideLeft .8s ease;
+
+}
+
+
+
+.hotel-tag{
+
+    display:inline-flex;
+
+    padding:8px 18px;
+
+    background:#FFF3D6;
+
+    color:#C89A22;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hotel-content h2{
+
+    font-size:48px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#1D2939;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.hotel-content h2 span{
+
+    color:#D4AF37;
+
+}
+
+
+
+.hotel-content > p{
+
+    color:#667085;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    max-width:560px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+
+.hotel-feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.feature-icon{
+
+    min-width:50px;
+
+    height:50px;
+
+    border-radius:16px;
+
+    background:#FFF3D6;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.feature-icon svg{
+
+    color:#D4AF37;
+
+}
+
+
+
+.hotel-feature h3{
+
+    font-size:18px;
+
+    color:#1D2939;
+
+    margin-bottom:6px;
+
+}
+
+
+
+.hotel-feature p{
+
+    color:#667085;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+
+.dashboard-btn{
+
+    margin-top:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#D4AF37;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.dashboard-btn:hover{
+
+    background:#C78700;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* =====================================================
+   RIGHT DASHBOARD PREVIEW
+===================================================== */
+
+
+.dashboard-wrapper{
+
+    animation:slideRight .8s ease;
+
+}
+
+
+
+
+
+.hotel-preview-card{
+
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:32px;
+
+    border:1px solid #ECE7DD;
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.10);
+
+    width:100%;
+
+    box-sizing:border-box;
+
+}
+
+
+
+
+
+/* HEADER */
+
+
+.hotel-preview-top{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    gap:20px;
+
+}
+
+
+
+.hotel-preview-top h3{
+
+
+    font-size:22px;
+
+    color:#1D2939;
+
+    font-weight:800;
+
+}
+
+
+
+.hotel-preview-top span{
+
+
+    background:#E9FFF2;
+
+    color:#12B76A;
+
+    padding:8px 15px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+
+.hotel-preview-stats{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.hotel-preview-stat{
+
+
+    background:#FCFBF8;
+
+    border:1px solid #ECE7DD;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    min-width:0;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.hotel-preview-stat:hover{
+
+
+    transform:translateY(-5px);
+
+    border-color:#D4AF37;
+
+}
+
+
+
+
+
+.hotel-preview-stat small{
+
+
+    color:#667085;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.hotel-preview-stat h2{
+
+
+    margin:10px 0 6px;
+
+    font-size:32px;
+
+    color:#1D2939;
+
+}
+
+
+
+
+
+.hotel-preview-stat p{
+
+
+    color:#12B76A;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+
+.hotel-preview-chart{
+
+
+    background:#FFF9F1;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    border:1px solid #ECE7DD;
+
+}
+
+
+
+
+
+.hotel-preview-chart-header{
+
+
+    font-size:18px;
+
+    font-weight:800;
+
+    color:#1D2939;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.hotel-preview-bars{
+
+
+    height:180px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:14px;
+
+}
+
+
+
+
+
+.hotel-preview-bar{
+
+
+    width:35px;
+
+    background:#D4AF37;
+
+    border-radius:10px 10px 0 0;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.hotel-preview-bar:hover{
+
+    opacity:.75;
+
+}
+
+
+
+
+
+.b1{
+
+    height:55px;
+
+}
+
+
+.b2{
+
+    height:85px;
+
+}
+
+
+.b3{
+
+    height:70px;
+
+}
+
+
+.b4{
+
+    height:120px;
+
+}
+
+
+.b5{
+
+    height:150px;
+
+}
+
+
+.b6{
+
+    height:110px;
+
+}
+
+
+.b7{
+
+    height:165px;
+
+}
+
+
+
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+
+@keyframes slideLeft{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+
+}
+
+
+
+@keyframes slideRight{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+@media(max-width:1100px){
+
+
+    .hotel-container{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+
+
+    .hotel-content h2{
+
+        font-size:40px;
+
+    }
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+    .hotel-solutions{
+
+        padding:80px 24px;
+
+    }
+
+
+
+    .hotel-content h2{
+
+        font-size:32px;
+
+    }
+
+
+
+    .hotel-preview-card{
+
+        padding:22px;
+
+    }
+
+
+
+    .hotel-preview-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .hotel-preview-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .hotel-preview-bars{
+
+        gap:8px;
+
+    }
+
+
+
+    .hotel-preview-bar{
+
+        width:22px;
+
+    }
+
+
+}

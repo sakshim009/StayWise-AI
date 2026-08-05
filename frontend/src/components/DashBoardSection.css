@@ -1,0 +1,397 @@
+/* =====================================================
+   STAYWISE AI SYSTEM DASHBOARD
+===================================================== */
+
+.dashboardSection {
+  padding: 80px 7% 110px;
+  background: #faf6ef;
+}
+
+/* ================= HEADER ================= */
+
+.dashboardHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 45px;
+}
+
+.dashboardBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: #f4efe3;
+  color: #8b6a1e;
+  border: 1px solid #d4af37;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+}
+
+.dashboardTitle {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1d2939;
+  margin-bottom: 18px;
+}
+
+.dashboardTitle span {
+  color: #d4af37;
+}
+
+.dashboardSubtitle {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #667085;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.dashboardContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  border: 1px solid #ece7dd;
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* =====================================================
+   KPI CARDS
+===================================================== */
+
+.dashboardKPIs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kpiCard {
+  background: #fcfbf8;
+  border: 1px solid #ece7dd;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 0;
+  transition: 0.35s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #d4af37;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.kpiTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.kpiTop svg {
+  color: #d4af37;
+}
+
+.kpiTop span {
+  color: #667085;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.kpiCard h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1d2939;
+  margin: 0 0 8px;
+}
+
+.kpiCard small {
+  color: #12b76a;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* =====================================================
+   CHART CARDS
+===================================================== */
+
+.chartCard {
+  background: white;
+  border: 1px solid #ece7dd;
+  border-radius: 22px;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.35s;
+  min-height: 360px;
+}
+
+.chartCard:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+}
+
+.revenueCard {
+  margin-bottom: 24px;
+}
+
+/* ================= CARD HEADER ================= */
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.cardHeader h4 {
+  margin: 0;
+  color: #1d2939;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cardHeader p {
+  margin-top: 5px;
+  color: #667085;
+  font-size: 14px;
+}
+
+/* ================= FILTER BUTTON ================= */
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fcf9f4;
+  border: 1px solid #e8d7a5;
+  color: #d4af37;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filterButton:hover {
+  background: #fff7e5;
+}
+
+/* =====================================================
+   CHART AREA
+===================================================== */
+
+.chartArea {
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+}
+
+/* =====================================================
+   BOTTOM CHARTS
+===================================================== */
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.chartGrid h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d2939;
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   HOTELS BY CITY (PIE CHART)
+===================================================== */
+
+.roomChart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.donutWrapper {
+  width: 50%;
+  height: 220px;
+}
+
+.roomLegend {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.legendItem strong {
+  display: block;
+  color: #1d2939;
+  font-size: 16px;
+}
+
+.legendItem p {
+  color: #667085;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.greenDot,
+.yellowDot,
+.orangeDot,
+.purpleDot,
+.blueDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.greenDot {
+  background: #3B82F6; /* Mumbai */
+}
+
+.yellowDot {
+  background: #22C55E; /* Pune */
+}
+
+.orangeDot {
+  background: #F59E0B; /* Goa */
+}
+
+.purpleDot {
+  background: #8B5CF6; /* Delhi */
+}
+
+.blueDot {
+  background: #EF4444; /* Bangalore */
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 46px;
+  width: 150px;
+  background: white;
+  border: 1px solid #ece7dd;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdownItem {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.dropdownItem:hover,
+.dropdownItem.active {
+  background: #fff3d6;
+  color: #c89a22;
+  font-weight: 600;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.dashboardHeader,
+.dashboardContainer {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .dashboardKPIs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roomChart {
+    flex-direction: column;
+  }
+
+  .donutWrapper,
+  .roomLegend {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboardSection {
+    padding: 70px 24px;
+  }
+
+  .dashboardTitle {
+    font-size: 2.2rem;
+  }
+
+  .dashboardContainer {
+    padding: 22px;
+  }
+
+  .dashboardKPIs {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filterButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
