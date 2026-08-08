@@ -59,7 +59,7 @@ function DashboardAI() {
       });
 
       const response = await fetch(
-        "http://localhost:5000/api/chat",
+        "https://staywise-ai-backend-6vue.onrender.com/api/chat",
         {
           method: "POST",
 

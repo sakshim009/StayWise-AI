@@ -27,7 +27,7 @@ function BookingCard({ setRooms, setAiRecommendation }) {
     try {
       // ================= SEARCH HOTELS =================
       const response = await fetch(
-        "http://localhost:5000/api/search/search",
+        "https://staywise-ai-backend-6vue.onrender.com/api/search/search",
         {
           method: "POST",
           headers: {
@@ -52,7 +52,7 @@ function BookingCard({ setRooms, setAiRecommendation }) {
       // ================= AI RECOMMENDATION =================
       try {
         const aiResponse = await fetch(
-          "http://localhost:5000/api/ai/recommend",
+          "https://staywise-ai-backend-6vue.onrender.com/api/ai/recommend",
           {
             method: "POST",
             headers: {
