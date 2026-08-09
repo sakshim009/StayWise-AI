@@ -1,5 +1,4 @@
-import "./DashboardSection.css";
-
+import "./DashBoardSection.css";
 import { useState } from "react";
 
 import {
