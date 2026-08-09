@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import DashboardSection from "../components/DashboardSection";
+import DashboardSection from "../components/DashBoardSection";
 
 function DashboardPage() {
   return (
