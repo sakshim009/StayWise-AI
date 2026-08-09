@@ -1907,7 +1907,7 @@ const hotelKnowledge = {
 
 {
   id: 38,
-  image: "/hotel9.jpg",
+  image: "/hotel10.jpg",
   name: "Bangalore Garden Luxury Hotel",
   location: "Bangalore",
   rating: "4.8",
@@ -2013,7 +2013,7 @@ const hotelKnowledge = {
 
 {
   id: 40,
-  image: "/hotel9.jpg",
+  image: "/hotel10.jpg",
   name: "Hyderabad Nizam Heritage Resort",
   location: "Hyderabad",
   rating: "4.8",
