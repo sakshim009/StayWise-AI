@@ -1690,9 +1690,379 @@ const hotelKnowledge = {
       ]
     }
   ]
+},
+// ================= EXTRA MUMBAI HOTEL =================
+
+{
+  id: 34,
+  image: "/hotel7.jpg",
+  name: "Mumbai Coastal Grand Resort",
+  location: "Mumbai",
+  rating: "4.8",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room1.jpg",
+      price: "5200/night",
+      capacity: "2 Guests",
+      features: [
+        "Free WiFi",
+        "Sea View",
+        "Breakfast Included",
+        "Smart TV"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room5.jpg",
+      price: "7800/night",
+      capacity: "3 Guests",
+      features: [
+        "Work Desk",
+        "Balcony",
+        "Mini Bar",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room7.jpg",
+      price: "15000/night",
+      capacity: "4 Guests",
+      features: [
+        "Private Lounge",
+        "Ocean View",
+        "King Bed",
+        "Luxury Bathroom"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA PUNE HOTEL =================
+
+{
+  id: 35,
+  image: "/hotel12.jpg",
+  name: "Pune Grand Elite Resort",
+  location: "Pune",
+  rating: "4.7",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room2.jpg",
+      price: "4000/night",
+      capacity: "2 Guests",
+      features: [
+        "Free WiFi",
+        "City View",
+        "Breakfast",
+        "Smart TV"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room6.jpg",
+      price: "6500/night",
+      capacity: "3 Guests",
+      features: [
+        "Premium Interior",
+        "Workspace",
+        "Coffee Maker",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room4.jpg",
+      price: "12000/night",
+      capacity: "4 Guests",
+      features: [
+        "Private Lounge",
+        "King Bed",
+        "Luxury Bathroom",
+        "Smart Controls"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA GOA HOTEL =================
+
+{
+  id: 36,
+  image: "/hotel10.jpg",
+  name: "Goa Paradise Beach Resort",
+  location: "Goa",
+  rating: "4.9",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room3.jpg",
+      price: "6500/night",
+      capacity: "2 Guests",
+      features: [
+        "Beach View",
+        "Free WiFi",
+        "Breakfast Included",
+        "Pool Access"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room5.jpg",
+      price: "9000/night",
+      capacity: "3 Guests",
+      features: [
+        "Private Balcony",
+        "Sea View",
+        "Mini Bar",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room7.jpg",
+      price: "17000/night",
+      capacity: "4 Guests",
+      features: [
+        "Private Pool",
+        "Ocean View",
+        "Jacuzzi",
+        "Luxury Lounge"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA DELHI HOTEL =================
+
+{
+  id: 37,
+  image: "/hotel7.jpg",
+  name: "Delhi Imperial Luxury Hotel",
+  location: "Delhi",
+  rating: "4.8",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room1.jpg",
+      price: "5200/night",
+      capacity: "2 Guests",
+      features: [
+        "Free WiFi",
+        "Breakfast",
+        "City View",
+        "Smart TV"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room4.jpg",
+      price: "8500/night",
+      capacity: "3 Guests",
+      features: [
+        "Business Lounge",
+        "Workspace",
+        "Mini Bar",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room6.jpg",
+      price: "15000/night",
+      capacity: "4 Guests",
+      features: [
+        "Luxury Interior",
+        "King Bed",
+        "Private Lounge",
+        "Premium View"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA BANGALORE HOTEL =================
+
+{
+  id: 38,
+  image: "/hotel9.jpg",
+  name: "Bangalore Garden Luxury Hotel",
+  location: "Bangalore",
+  rating: "4.8",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room2.jpg",
+      price: "4300/night",
+      capacity: "2 Guests",
+      features: [
+        "Garden View",
+        "Free WiFi",
+        "Breakfast",
+        "Smart TV"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room5.jpg",
+      price: "7200/night",
+      capacity: "3 Guests",
+      features: [
+        "Work Desk",
+        "Premium Bedding",
+        "Coffee Maker",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room3.jpg",
+      price: "14000/night",
+      capacity: "4 Guests",
+      features: [
+        "Luxury Living Area",
+        "King Bed",
+        "Smart Controls",
+        "Premium View"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA JAIPUR HOTEL =================
+
+{
+  id: 39,
+  image: "/hotel10.jpg",
+  name: "Jaipur Pink Palace Resort",
+  location: "Jaipur",
+  rating: "4.8",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room1.jpg",
+      price: "4800/night",
+      capacity: "2 Guests",
+      features: [
+        "Royal Interior",
+        "Free WiFi",
+        "Breakfast",
+        "City View"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room6.jpg",
+      price: "7500/night",
+      capacity: "3 Guests",
+      features: [
+        "Balcony",
+        "Premium Furniture",
+        "Mini Bar",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room7.jpg",
+      price: "15000/night",
+      capacity: "4 Guests",
+      features: [
+        "Royal Lounge",
+        "King Bed",
+        "Luxury Bathroom",
+        "Heritage View"
+      ]
+    }
+  ]
+},
+
+
+// ================= EXTRA HYDERABAD HOTEL =================
+
+{
+  id: 40,
+  image: "/hotel9.jpg",
+  name: "Hyderabad Nizam Heritage Resort",
+  location: "Hyderabad",
+  rating: "4.8",
+
+  rooms: [
+    {
+      id: 1,
+      name: "Deluxe Room",
+      image: "/room3.jpg",
+      price: "4200/night",
+      capacity: "2 Guests",
+      features: [
+        "Free WiFi",
+        "Heritage View",
+        "Breakfast",
+        "Smart TV"
+      ]
+    },
+    {
+      id: 2,
+      name: "Executive Room",
+      image: "/room5.jpg",
+      price: "7000/night",
+      capacity: "3 Guests",
+      features: [
+        "Workspace",
+        "Mini Bar",
+        "Premium Interior",
+        "Room Service"
+      ]
+    },
+    {
+      id: 3,
+      name: "Luxury Suite",
+      image: "/room6.jpg",
+      price: "13500/night",
+      capacity: "4 Guests",
+      features: [
+        "Private Lounge",
+        "King Bed",
+        "Luxury Bathroom",
+        "Smart Controls"
+      ]
+    }
+  ]
 }
 
-  ]
+]
 };
 
 export default hotelKnowledge;
+
