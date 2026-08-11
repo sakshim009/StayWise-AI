@@ -40,6 +40,8 @@ function BookingCard({ setRooms, setAiRecommendation }) {
       );
 
       const data = await response.json();
+      console.log("SEARCH RESULT:", data);
+console.log("HOTELS FOUND:", data.hotels?.length);
 
       if (!data.success) {
         alert(data.message);

@@ -1,5 +1,5 @@
 const response = await fetch(
-    "http://localhost:5000/api/search/search",
+    "https://staywise-ai-backend-6vue.onrender.com/api/search/search",
     {
         method: "POST",
         headers: {
