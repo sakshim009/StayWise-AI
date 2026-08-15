@@ -6,1259 +6,732 @@ import {
     useEffect
 } from "react";
 
-
 import {
-
     FaRobot,
     FaPaperPlane,
     FaCheckCircle,
     FaStar,
-    FaBed,
     FaConciergeBell,
     FaUtensils,
     FaMapMarkedAlt,
-    FaChartLine,
     FaArrowRight
-
 } from "react-icons/fa";
 
-
-
 import {
-
-    initialBooking,
-    startBooking,
-    isCheckoutAfterCheckin
-
-} from "../ai/bookingLogic";
-
-
-
-import {
-
     aiRouter
-
 } from "../ai/aiRouter";
-
-
-
-
 
 
 const features = [
 
-
     {
-
-        id:"room",
-
-        icon:<FaBed />,
-
-        title:"Room Booking",
-
-        subtitle:"Hotels & Reservations"
-
-    },
-
-
-    {
-
         id:"service",
-
         icon:<FaConciergeBell />,
-
         title:"Hotel Services",
-
         subtitle:"Guest Assistance"
-
     },
 
-
     {
-
         id:"food",
-
         icon:<FaUtensils />,
-
         title:"Dining",
-
         subtitle:"Menus & Restaurants"
-
     },
 
-
     {
-
         id:"nearby",
-
         icon:<FaMapMarkedAlt />,
-
         title:"Nearby Places",
-
         subtitle:"Travel Assistance"
-
-    },
-
-
-    {
-
-        id:"manager",
-
-        icon:<FaChartLine />,
-
-        title:"Manager AI",
-
-        subtitle:"Hotel Analytics"
-
     }
-
 
 ];
 
 
-
-
-
 function AISection(){
 
+    const [selected,setSelected] =
+    useState(features[0]);
 
 
-const [selected,setSelected] =
-useState(features[0]);
+    const [input,setInput] =
+    useState("");
 
 
+    const [messages,setMessages] =
+    useState([
 
-const [input,setInput] =
-useState("");
+        {
+            sender:"ai",
 
-
-
-const [messages,setMessages] =
-useState([
-
-{
-
-sender:"ai",
-
-text:
+            text:
 
 `👋 Welcome to StayWise AI.
 
 I am your Smart Hotel Ecosystem Assistant.
 
-I help hotels manage operations and help guests with hotel services, booking requests, and information.
+I help hotels manage operations and help guests with hotel services and information.
 
 How may I assist you today?`
 
-}
+        }
 
-]);
+    ]);
 
 
+    const [history,setHistory] =
+    useState([]);
 
 
-const [history,setHistory] =
-useState([]);
+    const [typing,setTyping] =
+    useState(false);
 
 
+    const chatBodyRef =
+    useRef(null);
 
-const [typing,setTyping] =
-useState(false);
 
 
+    useEffect(()=>{
 
-const [bookingFlow,setBookingFlow] =
-useState(initialBooking);
+        if(chatBodyRef.current){
 
+            chatBodyRef.current.scrollTop =
+            chatBodyRef.current.scrollHeight;
 
+        }
 
-const chatBodyRef =
-useRef(null);
+    },[messages,typing]);
 
 
 
+    const addAIMessage=(text)=>{
 
+        setMessages((prev)=>[
 
-useEffect(()=>{
+            ...prev,
 
+            {
+                sender:"ai",
+                text
+            }
 
-if(chatBodyRef.current){
+        ]);
 
+    };
 
-chatBodyRef.current.scrollTop =
-chatBodyRef.current.scrollHeight;
 
 
-}
+    const addUserMessage=(text)=>{
 
+        setMessages((prev)=>[
 
-},[messages,typing]);
+            ...prev,
 
+            {
+                sender:"user",
+                text
+            }
 
+        ]);
 
+    };
 
 
 
-const addAIMessage=(text)=>{
+    const handleSend = async()=>{
 
+        if(!input.trim()) return;
 
-setMessages((prev)=>[
 
-...prev,
+        const userMessage =
+        input.trim();
 
-{
 
-sender:"ai",
+        addUserMessage(userMessage);
 
-text
 
-}
+        setInput("");
 
-]);
 
+        /*
+        =================================
+        AI ROUTER
+        =================================
+        */
 
-};
+        const route =
+        aiRouter(userMessage);
 
 
+        /*
+        =================================
+        IGNORE BOOKING ROUTES
+        =================================
+        */
 
+        if(
+            route.type !== "booking" &&
+            route.reply
+        ){
 
+            addAIMessage(route.reply);
 
-const addUserMessage=(text)=>{
+            return;
 
+        }
 
-setMessages((prev)=>[
 
-...prev,
 
-{
-
-sender:"user",
-
-text
-
-}
-
-]);
-
-
-};
-const handleSend = async()=>{
-
-
-if(!input.trim()) return;
-
-
-
-const userMessage =
-input.trim();
-
-
-
-addUserMessage(userMessage);
-
-
-
-setInput("");
-
-
-
-
-
-/*
-=================================
-BOOKING FLOW
-=================================
-*/
-
-
-/*
-=================================
-BOOKING FLOW
-=================================
-*/
-
-if (bookingFlow.active) {
-
-    const text = userMessage.toLowerCase().trim();
-
-    // Cancel booking
-    if (["cancel", "stop", "exit", "quit", "restart"].includes(text)) {
-
-        setBookingFlow(initialBooking);
-
-        addAIMessage(`❌ Booking cancelled.
-
-How else can I help you today?`);
-
-        return;
-    }
-
-    // Switch assistant
-    if (text.includes("service")) {
-        setBookingFlow(initialBooking);
-        addAIMessage("🛎 Service Assistant Activated.\n\nAsk about hotel services.");
-        return;
-    }
-
-    if (text.includes("food") || text.includes("restaurant") || text.includes("menu")) {
-        setBookingFlow(initialBooking);
-        addAIMessage("🍽 Dining Assistant Activated.\n\nAsk about restaurant and menus.");
-        return;
-    }
-
-    if (text.includes("travel") || text.includes("nearby") || text.includes("place") || text.includes("beach")) {
-        setBookingFlow(initialBooking);
-        addAIMessage("📍 Travel Assistant Activated.\n\nAsk about nearby attractions.");
-        return;
-    }
-
-    if (text.includes("manager") || text.includes("price") || text.includes("pricing") || text.includes("revenue")) {
-        setBookingFlow(initialBooking);
-        addAIMessage("📊 Manager AI Activated.\n\nAsk about occupancy, revenue, pricing and inventory.");
-        return;
-    }
-
-    // Normal conversation
-    const casualWords = [
-        "hi",
-        "hello",
-        "hey",
-        "how are you",
-        "joke",
-        "funny",
-        "thanks",
-        "thank you",
-        "who are you"
-    ];
-
-    if (casualWords.some(word => text.includes(word))) {
+        /*
+        =================================
+        GROQ FALLBACK
+        =================================
+        */
 
         setTyping(true);
 
-        try {
 
-            const response = await fetch(
+        try{
+
+            const response =
+            await fetch(
                 "https://staywise-ai-backend-6vue.onrender.com/api/chat",
                 {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                        "application/json"
                     },
-                    body: JSON.stringify({
-                        message: userMessage,
+
+                    body:JSON.stringify({
+                        message:userMessage,
                         history
                     })
                 }
             );
 
-            const data = await response.json();
+
+            const data =
+            await response.json();
+
+
+            setHistory((prev)=>[
+
+                ...prev,
+
+                {
+                    role:"user",
+                    content:userMessage
+                },
+
+                {
+                    role:"assistant",
+                    content:data.reply
+                }
+
+            ]);
+
 
             addAIMessage(
-`${data.reply}
-
-🏨 Your booking is still active.
-
-Please continue with the current booking step or type "cancel".`
+                data.reply
             );
 
-        } catch {
+
+        }
+
+        catch(error){
+
+            console.log(error);
+
 
             addAIMessage(
-`I'm here to help.
-
-🏨 Your booking is still active.
-
-Please continue with the current booking step or type "cancel".`
+                "⚠️ StayWise AI is unavailable."
             );
 
         }
 
+
         setTyping(false);
 
-        return;
-    }
+    };
 
-    let reply = "";
 
-    switch (bookingFlow.step) {
 
-        case 1:
+    return (
 
-            if (userMessage.length < 3) {
+        <section className="ai-section">
 
-                addAIMessage(
-`❌ Please enter a valid hotel name.
 
-Example:
-Grand Palace Hotel`
-                );
+            <div className="ai-container">
 
-                return;
 
-            }
+                <div className="heading-grid">
 
-            setBookingFlow({
-                ...bookingFlow,
-                step: 2,
-                data: {
-                    ...bookingFlow.data,
-                    hotel: userMessage
-                }
-            });
 
-            reply =
-`🏨 Hotel selected: ${userMessage}
+                    <div className="badge">
 
-Now choose your room:
+                        <FaStar />
 
-• Deluxe Room
-• Executive Room
-• Luxury Suite`;
+                        AI Concierge
 
-            break;
+                    </div>
 
-        case 2:
 
-            const room = userMessage.toLowerCase();
+                    <h2>
 
-            if (
-                !room.includes("deluxe") &&
-                !room.includes("executive") &&
-                !room.includes("luxury")
-            ) {
+                        Meet <span>StayWise AI</span>
 
-                addAIMessage(
-`❌ Please choose a valid room.
+                    </h2>
 
-• Deluxe Room
-• Executive Room
-• Luxury Suite`
-                );
 
-                return;
+                    <p>
 
-            }
+                        Your Smart Hotel Ecosystem Assistant.
 
-            setBookingFlow({
-                ...bookingFlow,
-                step: 3,
-                data: {
-                    ...bookingFlow.data,
-                    room: userMessage
-                }
-            });
+                        Helping guests and hotel managers with intelligent AI support.
 
-            reply =
-`📅 Room selected: ${userMessage}
+                    </p>
 
-Please enter check-in date.
 
-Example:
-24 July`;
+                </div>
 
-            break;
 
-        case 3:
 
-            setBookingFlow({
-                ...bookingFlow,
-                step: 4,
-                data: {
-                    ...bookingFlow.data,
-                    checkIn: userMessage
-                }
-            });
+                <div className="assistant-card">
 
-            reply =
-`📅 Check-in saved.
 
-Please enter check-out date.
+                    {/* LEFT PANEL */}
 
-Example:
-28 July`;
+                    <div className="assistant-left">
 
-            break;
 
-        case 4:
+                        <div className="robot-wrapper">
 
-            if (
-                !isCheckoutAfterCheckin(
-                    bookingFlow.data.checkIn,
-                    userMessage
-                )
-            ) {
+                            <div className="robot-glow"></div>
 
-                addAIMessage(
-`❌ Check-out must be after check-in.
 
-Example:
-28 July
+                            <div className="robot">
 
-Or type "cancel".`
-                );
 
-                return;
+                                <div className="robot-head">
 
-            }
+                                    <div className="robot-face">
 
-            setBookingFlow({
-                ...bookingFlow,
-                step: 5,
-                data: {
-                    ...bookingFlow.data,
-                    checkOut: userMessage
-                }
-            });
+                                        <span className="eye"></span>
 
-            reply = "👥 How many guests will stay?";
+                                        <span className="eye"></span>
 
-            break;
+                                    </div>
 
-        default:
+                                </div>
 
-            // Keep your remaining cases (5,6,7,8,9)
-            // exactly as they are now.
 
-            break;
+                                <div className="robot-body"></div>
 
-    }
 
-    addAIMessage(reply);
+                                <div className="robot-shadow"></div>
 
-    return;
 
-}
+                            </div>
 
+                        </div>
 
 
-/*
-=================================
-AI ROUTER
-=================================
-*/
 
+                        <div className="assistant-profile">
 
 
-const route =
-aiRouter(userMessage);
+                            <span className="profile-status">
 
+                                ● Online
 
+                            </span>
 
 
+                            <h3>
 
-if(route.type==="booking"){
+                                StayWise AI
 
+                            </h3>
 
 
-setBookingFlow(route.data);
+                            <p className="robot-desc">
 
+                                AI platform helping hotels manage operations and guests.
 
+                            </p>
 
-addAIMessage(route.reply);
 
+                        </div>
 
 
-return;
 
+                        <div className="ai-feature-grid">
 
-}
 
+                            {
 
+                                features.map((feature)=>(
 
 
+                                    <div
 
+                                        key={feature.id}
 
-if(route.reply){
+                                        className={
+                                            `ai-feature-card ${
+                                                selected.id===feature.id
+                                                ?
+                                                "active"
+                                                :
+                                                ""
+                                            }`
+                                        }
 
 
-addAIMessage(route.reply);
+                                        onClick={()=>{
 
 
-return;
+                                            setSelected(feature);
 
 
-}
+                                            let msg="";
 
 
+                                            switch(feature.id){
 
 
+                                                case "food":
 
-
-
-/*
-=================================
-GROQ FALLBACK
-=================================
-*/
-
-
-setTyping(true);
-
-
-
-try{
-
-
-const response =
-await fetch(
-"https://staywise-ai-backend-6vue.onrender.com/api/chat",
-{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":
-"application/json"
-
-},
-
-body:JSON.stringify({
-
-message:userMessage,
-
-history
-
-})
-
-}
-);
-
-
-
-const data =
-await response.json();
-
-
-
-setHistory((prev)=>[
-
-...prev,
-
-{
-
-role:"user",
-
-content:userMessage
-
-},
-
-{
-
-role:"assistant",
-
-content:data.reply
-
-}
-
-]);
-
-
-
-addAIMessage(data.reply);
-
-
-
-}
-
-catch(error){
-
-
-console.log(error);
-
-
-addAIMessage(
-"⚠️ StayWise AI is unavailable."
-);
-
-
-}
-
-
-
-setTyping(false);
-
-
-
-};
-return (
-
-<section className="ai-section">
-
-
-<div className="ai-container">
-
-
-
-<div className="heading-grid">
-
-
-<div className="badge">
-
-<FaStar />
-
-AI Concierge
-
-</div>
-
-
-
-<h2>
-
-Meet <span>StayWise AI</span>
-
-</h2>
-
-
-
-<p>
-
-Your Smart Hotel Ecosystem Assistant.
-
-Helping guests and hotel managers with intelligent AI support.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-<div className="assistant-card">
-
-
-
-{/* LEFT PANEL */}
-
-
-<div className="assistant-left">
-
-
-
-<div className="robot-wrapper">
-
-<div className="robot-glow"></div>
-
-
-<div className="robot">
-
-
-<div className="robot-head">
-
-<div className="robot-face">
-
-<span className="eye"></span>
-
-<span className="eye"></span>
-
-</div>
-
-</div>
-
-
-<div className="robot-body"></div>
-
-
-<div className="robot-shadow"></div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div className="assistant-profile">
-
-
-<span className="profile-status">
-
-● Online
-
-</span>
-
-
-
-<h3>
-
-StayWise AI
-
-</h3>
-
-
-
-<p className="robot-desc">
-
-AI platform helping hotels manage operations and guests.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div className="ai-feature-grid">
-
-
-{
-
-features.map((feature)=>(
-
-
-<div
-
-key={feature.id}
-
-className={
-`ai-feature-card ${
-selected.id===feature.id
-?
-"active"
-:
-""
-}`
-}
-
-
-onClick={()=>{
-
-
-setSelected(feature);
-
-
-
-let msg="";
-
-
-
-switch(feature.id){
-
-
-
-case "room":
-
-setBookingFlow(startBooking());
-
-
-msg=
-`
-🏨 Booking Assistant Activated.
-
-Please select hotel name.
-`;
-
-break;
-
-
-
-
-case "manager":
-
-msg=
-`
-📊 Manager AI Activated.
-
-Ask me:
-
-• Occupancy
-• Revenue
-• Pricing
-• Inventory
-• Housekeeping
-
-`;
-
-break;
-
-
-
-
-case "food":
-
-msg=
+                                                    msg =
 `
 🍽 Dining Assistant Activated.
 
 Ask about restaurant and menus.
 `;
 
-break;
+                                                    break;
 
 
 
+                                                case "service":
 
-case "service":
-
-msg=
+                                                    msg =
 `
 🛎 Service Assistant Activated.
 
 Ask about hotel services.
 `;
 
-break;
+                                                    break;
 
 
 
+                                                case "nearby":
 
-case "nearby":
-
-msg=
+                                                    msg =
 `
 📍 Travel Assistant Activated.
 
 Ask about nearby attractions.
 `;
 
-break;
+                                                    break;
 
 
+                                                default:
+
+                                                    msg =
+`
+How can I help you today?
+`;
+
+                                                    break;
+
+                                            }
+
+
+                                            addAIMessage(msg);
+
+                                        }}
+
+                                    >
+
+
+                                        <div className="ai-feature-icon">
+
+                                            {feature.icon}
+
+                                        </div>
+
+
+                                        <div className="ai-feature-info">
+
+                                            <h4>
+
+                                                {feature.title}
+
+                                            </h4>
+
+
+                                            <span>
+
+                                                {feature.subtitle}
+
+                                            </span>
+
+                                        </div>
+
+
+                                        <FaArrowRight className="ai-feature-arrow"/>
+
+
+                                    </div>
+
+                                ))
+
+                            }
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    {/* RIGHT CHAT PANEL */}
+
+                    <div className="assistant-right">
+
+
+                        <div className="chat-header">
+
+
+                            <div className="chat-title">
+
+
+                                <FaRobot />
+
+
+                                <div>
+
+
+                                    <h3>
+
+                                        StayWise AI
+
+                                    </h3>
+
+
+                                    <span>
+
+                                        Smart Hotel Ecosystem AI
+
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div className="online-dot"></div>
+
+
+                        </div>
+
+
+
+                        <div
+
+                            className="chat-body"
+
+                            ref={chatBodyRef}
+
+                        >
+
+
+                            {
+
+                                messages.map((msg,index)=>(
+
+
+                                    <div
+
+                                        key={index}
+
+                                        className={
+
+                                            msg.sender==="ai"
+
+                                            ?
+
+                                            "ai-chat-message"
+
+                                            :
+
+                                            "user-chat-message"
+
+                                        }
+
+                                    >
+
+
+                                        {
+
+                                            msg.sender==="ai" &&
+
+                                            <div className="ai-avatar">
+
+                                                🤖
+
+                                            </div>
+
+                                        }
+
+
+                                        <div
+
+                                            className={
+
+                                                msg.sender==="ai"
+
+                                                ?
+
+                                                "ai-message-content"
+
+                                                :
+
+                                                "user-message-content"
+
+                                            }
+
+                                        >
+
+                                            {msg.text}
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                ))
+
+                            }
+
+
+
+                            {
+
+                                typing &&
+
+                                <div className="ai-chat-message">
+
+
+                                    <div className="ai-avatar">
+
+                                        🤖
+
+                                    </div>
+
+
+                                    <div className="ai-message-content typing">
+
+                                        StayWise AI is typing...
+
+                                    </div>
+
+
+                                </div>
+
+                            }
+
+
+                        </div>
+
+
+
+                        <div className="ai-chat-input">
+
+
+                            <input
+
+                                type="text"
+
+                                placeholder="Ask StayWise AI anything..."
+
+                                value={input}
+
+
+                                onChange={(e)=>
+                                    setInput(e.target.value)
+                                }
+
+
+                                onKeyDown={(e)=>{
+
+                                    if(e.key==="Enter"){
+
+                                        handleSend();
+
+                                    }
+
+                                }}
+
+                            />
+
+
+                            <button
+
+                                className="ai-send-btn"
+
+                                onClick={handleSend}
+
+                            >
+
+                                <FaPaperPlane/>
+
+                            </button>
+
+
+                        </div>
+
+
+
+                        <div className="chat-footer">
+
+
+                            <FaCheckCircle/>
+
+
+                            <span>
+
+                                Smart Hotel Ecosystem AI • Available 24/7
+
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+    );
 
 }
-
-
-addAIMessage(msg);
-
-
-}}
-
->
-
-
-<div className="ai-feature-icon">
-
-{feature.icon}
-
-</div>
-
-
-
-<div className="ai-feature-info">
-
-
-<h4>
-
-{feature.title}
-
-</h4>
-
-
-
-<span>
-
-{feature.subtitle}
-
-</span>
-
-
-</div>
-
-
-
-<FaArrowRight className="ai-feature-arrow"/>
-
-
-</div>
-
-
-))
-
-
-}
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-{/* RIGHT CHAT PANEL */}
-
-
-
-<div className="assistant-right">
-
-
-
-<div className="chat-header">
-
-
-<div className="chat-title">
-
-
-<FaRobot />
-
-<div>
-
-
-<h3>
-
-StayWise AI
-
-</h3>
-
-
-
-<span>
-
-Smart Hotel Ecosystem AI
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-
-<div className="online-dot"></div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div
-
-className="chat-body"
-
-ref={chatBodyRef}
-
->
-
-
-{
-
-messages.map((msg,index)=>(
-
-
-<div
-
-key={index}
-
-className={
-msg.sender==="ai"
-?
-"ai-chat-message"
-:
-"user-chat-message"
-}
-
->
-
-
-{
-
-msg.sender==="ai" &&
-
-<div className="ai-avatar">
-
-🤖
-
-</div>
-
-}
-
-
-
-
-<div
-
-className={
-msg.sender==="ai"
-?
-"ai-message-content"
-:
-"user-message-content"
-}
-
->
-
-
-{msg.text}
-
-
-</div>
-
-
-
-</div>
-
-
-))
-
-
-}
-
-
-
-
-
-
-
-{
-
-typing &&
-
-<div className="ai-chat-message">
-
-
-<div className="ai-avatar">
-
-🤖
-
-</div>
-
-
-
-<div className="ai-message-content typing">
-
-StayWise AI is typing...
-
-</div>
-
-
-</div>
-
-
-}
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div className="ai-chat-input">
-
-
-<input
-
-
-type="text"
-
-
-placeholder="Ask StayWise AI anything..."
-
-
-value={input}
-
-
-
-onChange={(e)=>setInput(e.target.value)}
-
-
-
-onKeyDown={(e)=>{
-
-if(e.key==="Enter"){
-
-handleSend();
-
-}
-
-}}
-
-
-/>
-
-
-
-<button
-
-className="ai-send-btn"
-
-onClick={handleSend}
-
->
-
-<FaPaperPlane/>
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div className="chat-footer">
-
-
-<FaCheckCircle/>
-
-
-<span>
-
-Smart Hotel Ecosystem AI • Available 24/7
-
-</span>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-);
-
-
-}
-
 
 
 export default AISection;

@@ -1542,7 +1542,7 @@ const hotelKnowledge = {
 
 {
   id: 31,
-  image: "/hotel5.jpg",
+  image: "/hotel7.jpg",
   name: "Kerala Backwater Grand Resort",
   location: "Kerala",
   rating: "4.9",
