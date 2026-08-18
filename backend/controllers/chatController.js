@@ -196,16 +196,11 @@ export const chatWithAI = async (req, res) => {
     // =====================================================
 
     const completion = await groq.chat.completions.create({
-
-      model: "llama-3.1-8b-instant",
-
-      messages,
-
-      temperature: 0.7,
-
-      max_tokens: 700,
-
-    });
+  model: "openai/gpt-oss-120b",
+  messages,
+  temperature: 0.7,
+  max_tokens: 700,
+});
 
     const reply =
       completion?.choices?.[0]?.message?.content?.trim() ||
